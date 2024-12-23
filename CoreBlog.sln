@@ -5,6 +5,8 @@ VisualStudioVersion = 17.13.35617.110 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreBlog.WebUI", "CoreBlog.WebUI\CoreBlog.WebUI.csproj", "{62364823-5CD9-4792-8994-C72B66AFDFBD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreBlog.Entities", "CoreBlog.Entities\CoreBlog.Entities.csproj", "{8F221A0F-4AF8-4865-93B6-20AE31E0C355}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{62364823-5CD9-4792-8994-C72B66AFDFBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62364823-5CD9-4792-8994-C72B66AFDFBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62364823-5CD9-4792-8994-C72B66AFDFBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F221A0F-4AF8-4865-93B6-20AE31E0C355}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F221A0F-4AF8-4865-93B6-20AE31E0C355}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F221A0F-4AF8-4865-93B6-20AE31E0C355}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F221A0F-4AF8-4865-93B6-20AE31E0C355}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
