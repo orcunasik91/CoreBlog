@@ -3,7 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35617.110 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreBlog.WebUI", "CoreBlog.WebUI\CoreBlog.WebUI.csproj", "{62364823-5CD9-4792-8994-C72B66AFDFBD}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62364823-5CD9-4792-8994-C72B66AFDFBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62364823-5CD9-4792-8994-C72B66AFDFBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62364823-5CD9-4792-8994-C72B66AFDFBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62364823-5CD9-4792-8994-C72B66AFDFBD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
