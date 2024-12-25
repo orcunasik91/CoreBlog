@@ -7,4 +7,6 @@ public class Comment
     public string Content { get; set; }
     public DateTime CreatedDate { get; set; }
     public bool IsActive { get; set; }
+    public int BlogId { get; set; }
+    public Blog Blog { get; set; }
 }

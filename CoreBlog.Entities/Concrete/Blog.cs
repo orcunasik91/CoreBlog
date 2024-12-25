@@ -8,4 +8,7 @@ public class Blog
     public string BlogImageUrl { get; set; }
     public DateTime CreatedDate { get; set; }
     public bool IsActive { get; set; }
+    public int CategoryId { get; set; }
+    public Category Category { get; set; }
+    public List<Comment> Comments { get; set; }
 }
