@@ -9,7 +9,7 @@
                             foreach (Blog blog in Model)
                             {
                                 <div class="col-lg-4 card">
-                                    <a href="single.html">
+                                    <a asp-controller="Blogs" asp-action="BlogRead" asp-route-id="@blog.BlogId">
                                         <img src="@blog.BlogThumbnailImageUrl" class="card-img-top img-fluid" alt="">
                                     </a>
                                     <div class="card-body">
@@ -25,13 +25,13 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="">
                                                     <i class="fas fa-eye"></i> @blog.Category.CategoryName
                                                 </a>
                                             </li>
                                         </ul>
                                         <h5 class="card-title">
-                                            <a href="#">@blog.BlogTitle</a>
+                                            <a asp-controller="Blogs" asp-action="BlogRead" asp-route-id="@blog.BlogId">@blog.BlogTitle</a>
                                         </h5>
                                         <p class="card-text mb-3">@(blog.BlogContent.Length > 100 ? blog.BlogContent.Substring(0,blog.BlogContent.Substring(0,105).LastIndexOf(" "))+"..." : blog.BlogContent + "...") </p>
                                         <a asp-controller="Blogs" asp-action="BlogRead" asp-route-id="@blog.BlogId" class="btn btn-primary read-m">Devamı...</a>
