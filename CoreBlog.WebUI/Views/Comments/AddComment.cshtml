@@ -1,0 +1,13 @@
+﻿@model Comment
+<div class="comment-top">
+    <h4>Yorum Yap</h4>
+    <div class="comment-bottom">
+        <form asp-controller="Comments" asp-action="AddComment" method="post">
+            <input type="hidden" asp-for="BlogId" />
+            <input class="form-control bg-black" type="text" asp-for="UserName" placeholder="Kullanıcı Adınız" required="">
+            <input class="form-control bg-black" type="email" asp-for="Email" placeholder="Eposta Adresiniz" required="">
+            <textarea class="form-control bg-black" asp-for="Content" placeholder="Mesajınız..." required=""></textarea>
+            <button type="submit" class="btn btn-primary submit">Yanıtla</button>
+        </form>
+    </div>
+</div>

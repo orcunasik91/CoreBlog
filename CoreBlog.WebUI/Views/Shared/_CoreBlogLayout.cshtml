@@ -4,14 +4,6 @@
 @await Component.InvokeAsync("HeadLayoutComponentPartial") 
 <body>
     @await Component.InvokeAsync("HeaderLayoutComponentPartial")
-    <div class="banner-inner">
-    </div>
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-            <a href="index.html">Anasayfa</a>
-        </li>
-        <li class="breadcrumb-item active">Blog</li>
-    </ol>
     @RenderBody()
     @await Component.InvokeAsync("FooterLayoutComponentPartial")
     @await Component.InvokeAsync("ScriptsLayoutComponentPartial")

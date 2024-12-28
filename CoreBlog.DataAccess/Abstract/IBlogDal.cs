@@ -3,4 +3,5 @@
 namespace CoreBlog.DataAccess.Abstract;
 public interface IBlogDal : IBaseEntityDal<Blog>
 {
+    List<Blog> GetBlogsByCategory();
 }

@@ -13,7 +13,7 @@ public class BlogListComponentPartial : ViewComponent
 
     public IViewComponentResult Invoke()
     {
-        var blogs = _blogService.GetList();
+        var blogs = _blogService.GetBlogListWithCategory();
         return View(blogs);
     }
 }

@@ -27,6 +27,11 @@ public class CommentManager : ICommentService
         return _commentDal.GetById(id);
     }
 
+    public List<Comment> GetCommentsByBlog(int id)
+    {
+        return _commentDal.GetAll(c => c.BlogId == id);
+    }
+
     public List<Comment> GetList()
     {
         return _commentDal.GetAll();

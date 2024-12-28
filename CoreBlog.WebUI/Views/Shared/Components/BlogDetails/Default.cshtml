@@ -1,0 +1,39 @@
+﻿@model Blog
+
+<div class="blog-grid-top">
+    <div class="b-grid-top">
+        <div class="blog_info_left_grid">
+            <a href="">
+                <img src="@Model.BlogImageUrl" class="img-fluid" alt="Blog Resim">
+            </a>
+        </div>
+        <div class="blog-info-middle">
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="far fa-calendar-alt"></i> @Model.CreatedDate.ToString("MMM dd, yyyy")
+                    </a>
+                </li>
+                <li class="mx-2">
+                    <a href="#">
+                        <i class="far fa-thumbs-up"></i> 0 Likes
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="far fa-comment"></i> 0 Comments
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <h3>
+        <a href="">@Model.BlogTitle </a>
+    </h3>
+    <p>
+        @Model.BlogContent
+    </p>
+
+</div>

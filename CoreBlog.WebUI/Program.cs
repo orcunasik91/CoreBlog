@@ -15,6 +15,8 @@ namespace CoreBlog.WebUI
             builder.Services.AddDbContext<MyAppContext>();
             builder.Services.AddScoped<IBlogDal, EfBlogRepository>();
             builder.Services.AddScoped<IBlogService, BlogManager>();
+            builder.Services.AddScoped<ICommentDal, EfCommentRepository>();
+            builder.Services.AddScoped<ICommentService, CommentManager>();
 
             WebApplication app = builder.Build();
             if (!app.Environment.IsDevelopment())

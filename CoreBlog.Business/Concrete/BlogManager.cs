@@ -22,6 +22,16 @@ public class BlogManager : IBlogService
         _blogDal.Delete(entity);
     }
 
+    public List<Blog> GetBlogListWithCategory()
+    {
+        return _blogDal.GetBlogsByCategory();
+    }
+
+    public List<Blog> GetBlogsById(int id)
+    {
+        return _blogDal.GetAll(b => b.BlogId == id);
+    }
+
     public Blog GetById(int id)
     {
         return _blogDal.GetById(id);

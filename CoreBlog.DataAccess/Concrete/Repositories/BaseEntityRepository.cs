@@ -1,5 +1,6 @@
 ﻿using CoreBlog.DataAccess.Abstract;
 using CoreBlog.DataAccess.Concrete.Context;
+using System.Linq.Expressions;
 
 namespace CoreBlog.DataAccess.Concrete.Repositories;
 public class BaseEntityRepository<TEntity> : IBaseEntityDal<TEntity> where TEntity : class, new()
@@ -13,19 +14,21 @@ public class BaseEntityRepository<TEntity> : IBaseEntityDal<TEntity> where TEnti
         }
     }
 
-    public List<TEntity> GetAll()
-    {
-        using (MyAppContext context = new())
-        {
-            return context.Set<TEntity>().ToList();
-        }
-    }
-
     public TEntity GetById(int id)
     {
         using (MyAppContext context = new())
         {
             return context.Set<TEntity>().Find(id);
+        }
+    }
+
+    public List<TEntity> GetAll(Expression<Func<TEntity, bool>> filter)
+    {
+        using (MyAppContext context = new())
+        {
+            return filter == null
+                ? new List<TEntity>(context.Set<TEntity>().ToList())
+                : new List<TEntity>(context.Set<TEntity>().Where(filter).ToList());
         }
     }
 
