@@ -28,6 +28,6 @@ public class CommentsController : Controller
         comment.CreatedDate = Convert.ToDateTime(DateTime.Now.ToString("dd-MMMM-yyyy"));
         comment.IsActive = true;
         _commentService.Create(comment);
-        return RedirectToAction("Index","Blogs");
+        return RedirectToAction("BlogRead","Blogs", new { id = comment.BlogId});
     }
 }
