@@ -1,0 +1,25 @@
+﻿@model Writer
+@{
+    ViewData["Title"] = "Giriş Paneli";
+}
+<section class="main-content-w3layouts-agileits">
+    <div class="container">
+        <h3 class="tittle">CoreBlog Giriş Paneli</h3>
+        <div class="row inner-sec">
+            <div class="login p-5 bg-light mx-auto mw-100">
+                <form asp-controller="Login" asp-action="Index" method="post">
+                    <div class="form-group">
+                        <label asp-for="WriterEmail">Email Adresi</label>
+                        <input type="email" class="form-control" asp-for="WriterEmail" required="">
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="WriterPassword">Şifre</label>
+                        <input type="password" class="form-control" asp-for="WriterPassword" required="">
+                    </div>
+                    <button type="submit" class="btn btn-success submit mb-4">Giriş Yap</button>
+                    <p><a asp-controller="Register" asp-action="Index"> Hesabın yok mu? Şimdi Kayıt Ol</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
