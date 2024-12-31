@@ -1,5 +1,7 @@
 ﻿using CoreBlog.Business.Abstract;
+using CoreBlog.Business.ValidationRules.WriterValidation;
 using CoreBlog.Entities.Concrete;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CoreBlog.WebUI.Controllers;
@@ -21,8 +23,22 @@ public class RegisterController : Controller
     [HttpPost]
     public IActionResult Index(Writer writer)
     {
-        writer.IsActive = false;
-        _writerService.Create(writer);
-        return RedirectToAction("Index","Blogs");
+        WriterValidator validationRules = new();
+        ValidationResult validationResult = validationRules.Validate(writer);
+        if (validationResult.IsValid)
+        {
+            writer.IsActive = false;
+            _writerService.Create(writer);
+            return RedirectToAction("Index", "Blogs");
+        }
+        else
+        {
+            foreach (ValidationFailure error in validationResult.Errors)
+            {
+                ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
+            }
+        }
+        return View();
+        
     }
 }

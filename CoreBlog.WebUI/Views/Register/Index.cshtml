@@ -11,22 +11,24 @@
                     <div class="form-row">
                         <div class="col-md-6 mb-3">
                             <label asp-for="WriterFullName">Adınız Soyadınız</label>
-
-                            <input type="text" class="form-control" asp-for="WriterFullName" required="" autofocus>
+                            <input type="text" class="form-control" asp-for="WriterFullName" autofocus>
+                            <span class="text-danger" asp-validation-for="WriterFullName"></span>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label asp-for="WriterEmail">Email</label>
-                            <input type="email" class="form-control" asp-for="WriterEmail" required="">
+                            <input type="email" class="form-control" asp-for="WriterEmail">
+                            <span class="text-danger" asp-validation-for="WriterEmail"></span>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label asp-for="WriterPassword">Şifre</label>
-                            <input type="password" class="form-control" asp-for="WriterPassword" required="">
+                            <input type="password" class="form-control" asp-for="WriterPassword">
+                            <span class="text-danger" asp-validation-for="WriterPassword"></span>
                         </div>
                         <div class="form-group col-md-6">
                             <label asp-for="WriterImageUrl">Profil Resmi</label>
-                            <input type="text" class="form-control" asp-for="WriterImageUrl" required="">
+                            <input type="text" class="form-control" asp-for="WriterImageUrl">
                         </div>
 
                     </div>
