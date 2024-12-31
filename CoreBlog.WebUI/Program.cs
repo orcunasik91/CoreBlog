@@ -17,6 +17,10 @@ namespace CoreBlog.WebUI
             builder.Services.AddScoped<IBlogService, BlogManager>();
             builder.Services.AddScoped<ICommentDal, EfCommentRepository>();
             builder.Services.AddScoped<ICommentService, CommentManager>();
+            builder.Services.AddScoped<ICategoryDal, EfCategoryRepository>();
+            builder.Services.AddScoped<ICategoryService, CategoryManager>();
+            builder.Services.AddScoped<IWriterDal, EfWriterRepository>();
+            builder.Services.AddScoped<IWriterService, WriterManager>();
 
             WebApplication app = builder.Build();
             if (!app.Environment.IsDevelopment())

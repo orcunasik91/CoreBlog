@@ -1,11 +1,13 @@
 ﻿@{ Layout = null;}
 <!DOCTYPE html>
 <html lang="tr">
-@await Component.InvokeAsync("HeadLayoutComponentPartial") 
+@await Component.InvokeAsync("HeadLayoutComponentPartial")
+@RenderSection("Styles", false)
 <body>
     @await Component.InvokeAsync("HeaderLayoutComponentPartial")
     @RenderBody()
     @await Component.InvokeAsync("FooterLayoutComponentPartial")
+    @RenderSection("Scripts", false)
     @await Component.InvokeAsync("ScriptsLayoutComponentPartial")
     <a href="#home" class="scroll" id="toTop" style="display: block;">
         <span id="toTopHover" style="opacity: 1;"> </span>
