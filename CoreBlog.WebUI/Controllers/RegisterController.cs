@@ -28,6 +28,7 @@ public class RegisterController : Controller
         if (validationResult.IsValid)
         {
             writer.IsActive = false;
+            writer.WriterAbout = "test";
             _writerService.Create(writer);
             return RedirectToAction("Index", "Blogs");
         }
