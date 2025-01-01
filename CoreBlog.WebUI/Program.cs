@@ -38,7 +38,7 @@ namespace CoreBlog.WebUI
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Blog}/{action=Index}/{id?}");
+                pattern: "{controller=Blogs}/{action=Index}/{id?}");
 
             app.Run();
         }
