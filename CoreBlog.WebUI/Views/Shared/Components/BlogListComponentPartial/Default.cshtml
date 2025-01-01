@@ -34,7 +34,7 @@
                                             <a asp-controller="Blogs" asp-action="BlogRead" asp-route-id="@blog.BlogId">@blog.BlogTitle</a>
                                         </h5>
                                         <p class="card-text mb-3">@(blog.BlogContent.Length > 100 ? blog.BlogContent.Substring(0,blog.BlogContent.Substring(0,105).LastIndexOf(" "))+"..." : blog.BlogContent + "...") </p>
-                                        <a asp-controller="Blogs" asp-action="BlogRead" asp-route-id="@blog.BlogId" class="btn btn-primary read-m">Devamı...</a>
+                                        <a asp-controller="Blogs" asp-action="BlogRead" asp-route-id="@blog.BlogId" asp-route-writerId="@blog.WriterId" class="btn btn-primary read-m">Devamı...</a>
                                     </div>
                                 </div>
                             }

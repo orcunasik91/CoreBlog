@@ -14,7 +14,7 @@ public class BlogDetails : ViewComponent
     public IViewComponentResult Invoke(int id)
     {
         ViewData["BlogId"] = id;
-        var blogDetail = _blogService.GetById(id);
+        var blogDetail = _blogService.GetBlogsById(id);
         return View(blogDetail);
     }
 }

@@ -17,9 +17,11 @@ public class BlogsController : Controller
     }
 
     [HttpGet]
-    public IActionResult BlogRead(int id)
+    public IActionResult BlogRead(int id, int? writerId)
     {
-        ViewBag.BlogId = id;
+        var blog = _blogService.GetById(id);
+        ViewBag.BlogId = blog.BlogId;
+        ViewBag.WriterId = writerId.Value;
         return View();
     }
 
