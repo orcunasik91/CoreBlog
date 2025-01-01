@@ -32,6 +32,11 @@ public class BlogManager : IBlogService
         return _blogDal.GetAll(b => b.BlogId == id);
     }
 
+    public List<Blog> GetBlogsByWriter(int writerId)
+    {
+        return _blogDal.GetAll(blog => blog.WriterId == writerId);
+    }
+
     public Blog GetById(int id)
     {
         return _blogDal.GetById(id);

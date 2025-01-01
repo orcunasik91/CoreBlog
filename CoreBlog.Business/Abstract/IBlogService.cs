@@ -5,4 +5,5 @@ public interface IBlogService : IBaseEntityService<Blog>
 {
     List<Blog> GetBlogListWithCategory();
     List<Blog> GetBlogsById(int id);
+    List<Blog> GetBlogsByWriter(int writerId);
 }
