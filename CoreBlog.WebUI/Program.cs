@@ -21,6 +21,8 @@ namespace CoreBlog.WebUI
             builder.Services.AddScoped<ICategoryService, CategoryManager>();
             builder.Services.AddScoped<IWriterDal, EfWriterRepository>();
             builder.Services.AddScoped<IWriterService, WriterManager>();
+            builder.Services.AddScoped<INewsLetterDal, EfNewsLetterRepository>();
+            builder.Services.AddScoped<INewsLetterService, NewsLetterManager>();
 
             WebApplication app = builder.Build();
             if (!app.Environment.IsDevelopment())

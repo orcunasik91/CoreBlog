@@ -1,0 +1,12 @@
+﻿@model NewsLetter
+    <div class="tech-btm">
+        <img src="~/CoreBlogTheme/images/banner1.jpg" class="img-fluid" alt="">
+    </div>
+    <div class="tech-btm">
+        <h4>Son Gelişmelerden Haberdar Ol</h4>
+        <p>Eposta Bültenimize Kaydol</p>
+        <form asp-area="" asp-controller="NewsLetters" asp-action="AddSubscribe" method="post">
+            <input type="email" placeholder="Email" asp-for="Email" required="">
+            <input type="submit" value="Bültene Kaydol">
+        </form>
+    </div>
