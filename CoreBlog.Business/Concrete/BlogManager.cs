@@ -1,6 +1,7 @@
 ﻿using CoreBlog.Business.Abstract;
 using CoreBlog.DataAccess.Abstract;
 using CoreBlog.Entities.Concrete;
+using CoreBlog.Entities.Dtos;
 
 namespace CoreBlog.Business.Concrete;
 public class BlogManager : IBlogService
@@ -42,9 +43,19 @@ public class BlogManager : IBlogService
         return _blogDal.GetById(id);
     }
 
+    public List<CategoriesWithBlogCountsDto> GetCategoriesWithBlogCounts()
+    {
+        return _blogDal.GetCategoriesWithBlogCounts();
+    }
+
     public List<Blog> GetList()
     {
         return _blogDal.GetAll();
+    }
+
+    public List<Blog> GetRecentBlogs()
+    {
+        return _blogDal.GetRecentBlogs();
     }
 
     public void Update(Blog entity)

@@ -1,0 +1,20 @@
+﻿@model List<Blog>
+<div class="single-gd tech-btm">
+    <h4>Son Yazılar</h4>
+    <div class="blog-grids">
+        @foreach (Blog blog in Model)
+        {
+            <div class="blog-grid-left mb-2">
+                <h5>
+                    <a asp-area="" asp-controller="Blogs" asp-action="BlogRead" asp-route-id="@blog.BlogId" asp-route-writerId="@blog.WriterId">@blog.BlogTitle</a>
+                </h5>
+            </div>
+            <div class="blog-grid-right">
+                <a asp-area="" asp-controller="Blogs" asp-action="BlogRead" asp-route-id="@blog.BlogId" asp-route-writerId="@blog.WriterId">
+                    <img src="@blog.BlogThumbnailImageUrl" class="img-fluid" alt="BlogThumbnail">
+                </a>
+            </div>
+        }
+        <div class="clearfix"> </div>
+    </div>
+</div>

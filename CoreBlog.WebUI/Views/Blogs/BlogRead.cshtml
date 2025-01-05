@@ -22,23 +22,7 @@
                     <partial name="~/Views/NewsLetters/AddSubscribe.cshtml" />
                     @await Component.InvokeAsync("CategoryList")
                     @await Component.InvokeAsync("BlogsOfWriter", new {writerId = ViewBag.WriterId })
-                    <div class="single-gd tech-btm">
-                        <h4>Recent Post</h4>
-                        <div class="blog-grids">
-                            <div class="blog-grid-left">
-                                <a href="single.html">
-                                    <img src="~/CoreBlogTheme/images/b1.jpg" class="img-fluid" alt="">
-                                </a>
-                            </div>
-                            <div class="blog-grid-right">
-
-                                <h5>
-                                    <a href="single.html">Pellentesque dui, non felis. Maecenas male</a>
-                                </h5>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </div>
-                    </div>
+                    @await Component.InvokeAsync("RecentBlogs")
                 </div>
             </aside>
         </div>

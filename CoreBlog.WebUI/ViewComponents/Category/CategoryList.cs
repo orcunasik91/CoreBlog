@@ -4,16 +4,16 @@ using Microsoft.AspNetCore.Mvc;
 namespace CoreBlog.WebUI.ViewComponents.Category;
 public class CategoryList : ViewComponent
 {
-    private readonly ICategoryService _categoryService;
+    private readonly IBlogService _blogService;
 
-    public CategoryList(ICategoryService categoryService)
+    public CategoryList(IBlogService blogService)
     {
-        _categoryService = categoryService;
+        _blogService = blogService;
     }
 
     public IViewComponentResult Invoke()
     {
-        var categories = _categoryService.GetList();
-        return View(categories);
+        var categoryWithBlogCounts = _blogService.GetCategoriesWithBlogCounts();
+        return View(categoryWithBlogCounts);
     }
 }
