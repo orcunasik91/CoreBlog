@@ -25,6 +25,8 @@ namespace CoreBlog.WebUI
             builder.Services.AddScoped<INewsLetterService, NewsLetterManager>();
             builder.Services.AddScoped<IAboutDal, EfAboutRepository>();
             builder.Services.AddScoped<IAboutService, AboutManager>();
+            builder.Services.AddScoped<IContactDal, EfContactRepository>();
+            builder.Services.AddScoped<IContactService, ContactManager>();
 
             WebApplication app = builder.Build();
             if (!app.Environment.IsDevelopment())

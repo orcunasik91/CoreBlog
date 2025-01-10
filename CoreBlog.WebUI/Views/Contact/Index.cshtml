@@ -1,0 +1,39 @@
+﻿@model Contact
+@{
+    ViewData["Title"] = "İletişim";
+}
+@section Styles{ 
+    <link href="~/CoreBlogTheme/css/contact.css" rel='stylesheet' type='text/css' />
+}
+<section class="main-content-w3layouts-agileits">
+    <h3 class="tittle">Bize Ulaşın</h3>
+    <div class="container">
+        <div class="contact_grid_right">
+            <form asp-area="" asp-controller="Contact" asp-action="Index" method="post">
+                <div class="row contact_left_grid">
+                    <div class="col-md-6 con-left">
+                        <div class="form-group">
+                            <label asp-for="UserName">Ad Soyad</label>
+                            <input class="form-control" type="text" asp-for="UserName" placeholder="Adınız">
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Email">Email Adresi</label>
+                            <input class="form-control" type="email" asp-for="Email" placeholder="test@mail.com">
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Subject">Konu</label>
+                            <input class="form-control" type="text" asp-for="Subject" placeholder="Öneri/Şikayet/İstek">
+                        </div>
+                    </div>
+                    <div class="col-md-6 con-right">
+                        <div class="form-group">
+                            <label asp-for="Content">Mesaj</label>
+                            <textarea asp-for="Content" placeholder="Mesajınızı Buraya Yazınız..."></textarea>
+                        </div>
+                        <input class="form-control" type="submit" value="Gönder">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
