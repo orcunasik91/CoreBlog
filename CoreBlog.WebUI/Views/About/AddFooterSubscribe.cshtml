@@ -1,0 +1,14 @@
+﻿@model NewsLetter
+    <div class="col-lg-4 subscribe-main footer-grid-agileits-w3ls text-left">
+        <h2>Eposta Bültenimiz</h2>
+        <div class="subscribe-main text-left">
+            <div class="subscribe-form">
+                <form asp-area="" asp-controller="About" asp-action="AddFooterSubscribe" method="post" class="subscribe_form">
+                    <input class="form-control" type="email" asp-for="Email" placeholder="Eposta Adresiniz..." required="">
+                    <button type="submit" class="btn btn-primary submit">Abone Ol</button>
+                </form>
+                <div class="clearfix"> </div>
+            </div>
+            <p>SPAM Eposta yok!</p>
+        </div>
+    </div>
