@@ -1,7 +1,10 @@
 ﻿using CoreBlog.Business.Abstract;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CoreBlog.WebUI.Controllers;
+
+[AllowAnonymous]
 public class BlogsController : Controller
 {
     private readonly IBlogService _blogService;

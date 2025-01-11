@@ -3,6 +3,9 @@ using CoreBlog.Business.Concrete;
 using CoreBlog.DataAccess.Abstract;
 using CoreBlog.DataAccess.Concrete.Context;
 using CoreBlog.DataAccess.Concrete.Repositories.EntityFramework;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 
 namespace CoreBlog.WebUI
 {
@@ -28,6 +31,27 @@ namespace CoreBlog.WebUI
             builder.Services.AddScoped<IContactDal, EfContactRepository>();
             builder.Services.AddScoped<IContactService, ContactManager>();
 
+            builder.Services.AddMvc(config =>
+            {
+                var policy = new AuthorizationPolicyBuilder()
+                .RequireAuthenticatedUser()
+                .Build();
+                config.Filters.Add(new AuthorizeFilter(policy));
+            });
+            builder.Services.AddAuthentication(
+                CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(cookie =>
+                {
+                    cookie.LoginPath = "/Login/Index";
+                });
+            builder.Services.ConfigureApplicationCookie(options =>
+            {
+                options.Cookie.HttpOnly = true;
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
+                options.LoginPath = "/Login/Index";
+                options.SlidingExpiration = true;
+            });
+
             WebApplication app = builder.Build();
             if (!app.Environment.IsDevelopment())
             {
@@ -39,7 +63,7 @@ namespace CoreBlog.WebUI
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllerRoute(

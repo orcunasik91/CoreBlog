@@ -2,9 +2,12 @@
 using CoreBlog.Business.ValidationRules.WriterValidation;
 using CoreBlog.Entities.Concrete;
 using FluentValidation.Results;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CoreBlog.WebUI.Controllers;
+
+[AllowAnonymous]
 public class RegisterController : Controller
 {
     private readonly IWriterService _writerService;

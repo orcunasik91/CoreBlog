@@ -1,8 +1,11 @@
 ﻿using CoreBlog.Business.Abstract;
 using CoreBlog.Entities.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CoreBlog.WebUI.Controllers;
+
+[AllowAnonymous]
 public class ContactController : Controller
 {
     private readonly IContactService _contactService;
