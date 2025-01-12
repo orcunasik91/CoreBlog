@@ -1,0 +1,50 @@
+﻿@model Blog
+@{
+    ViewData["Title"] = "CreateBlog";
+    Layout = "~/Views/Shared/_WriterPanelLayout.cshtml";
+}
+<div class="page-header">
+    <span><a class="btn btn-dark mx-3" asp-controller="Writer" asp-action="Index">Geri Dön</a></span>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Bloglarım</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Yeni Blog</li>
+        </ol>
+    </nav>
+</div>
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yeni Blog Oluştur</h4>
+            <form class="forms-sample" asp-area="" asp-controller="Writer" asp-action="CreateBlog" method="post">
+                <div class="form-group">
+                    <label asp-for="BlogTitle">Başlık</label>
+                    <input type="text" class="form-control" asp-for="BlogTitle" placeholder="Başlık">
+                </div>
+                <div class="form-group">
+                    <label asp-for="CategoryId">Kategori</label>
+                    <select class="form-control" asp-for="CategoryId" asp-items="ViewBag.Categories">
+                        <option></option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BlogContent">İçerik</label>
+                    <textarea class="form-control" asp-for="BlogContent" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BlogImageUrl">Ana Görsel</label>
+                    <input type="text" class="form-control" asp-for="BlogImageUrl" placeholder="Ana Resim">
+                </div>
+                <div class="form-group">
+                    <label asp-for="BlogThumbnailImageUrl">Thumbnail</label>
+                    <input type="text" class="form-control" asp-for="BlogThumbnailImageUrl" placeholder="Thumbnail">
+                </div>
+                <div class="form-group">
+                    <label asp-for="WriterId">Yazar</label>
+                    <input type="text" class="form-control" asp-for="WriterId" value="@ViewBag.Writer" disabled>
+                </div>
+                <button type="submit" class="btn btn-gradient-primary mr-2">Kaydet</button>
+            </form>
+        </div>
+    </div>
+</div>

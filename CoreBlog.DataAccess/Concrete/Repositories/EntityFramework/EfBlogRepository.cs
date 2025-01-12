@@ -15,6 +15,14 @@ public class EfBlogRepository : BaseEntityRepository<Blog>, IBlogDal
         }
     }
 
+    public List<Blog> GetBlogsWithCategoryByWriter(int writerId)
+    {
+        using (MyAppContext context = new())
+        {
+            return context.Blogs.Include(b => b.Category).Where(b => b.WriterId == writerId).ToList();
+        }
+    }
+
     public List<CategoriesWithBlogCountsDto> GetCategoriesWithBlogCounts()
     {
         using (MyAppContext context = new())

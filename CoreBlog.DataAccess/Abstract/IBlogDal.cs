@@ -7,4 +7,5 @@ public interface IBlogDal : IBaseEntityDal<Blog>
     List<Blog> GetBlogsByCategory();
     List<Blog> GetRecentBlogs();
     List<CategoriesWithBlogCountsDto> GetCategoriesWithBlogCounts();
+    List<Blog> GetBlogsWithCategoryByWriter(int writerId);
 }
