@@ -43,4 +43,22 @@ public class WriterController : Controller
         _blogService.Create(blog);
         return RedirectToAction(nameof(Index));
     }
+
+    [HttpGet]
+    public IActionResult GetMyBlog(int id)
+    {
+        var blog = _blogService.GetById(id);
+        List<Category> categories = _categoryService.GetList();
+        ViewBag.Categories = new SelectList(categories, "CategoryId", "CategoryName");
+        return View(blog);
+    }
+
+    [HttpPost]
+    public IActionResult UpdateBlog(Blog blog)
+    {
+        blog.IsActive = true;
+        blog.WriterId = 1;
+        _blogService.Update(blog);
+        return RedirectToAction(nameof(Index));
+    }
 }

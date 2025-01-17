@@ -1,0 +1,47 @@
+﻿@model Blog
+@{
+    ViewData["Title"] = "Blog Düzenle";
+    Layout = "~/Views/Shared/_WriterPanelLayout.cshtml";
+}
+<div class="page-header">
+    <span><a class="btn btn-dark mx-3" asp-controller="Writer" asp-action="Index">Geri Dön</a></span>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-controller="Writer" asp-action="Index">Bloglarım</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Blog Düzenle</li>
+        </ol>
+    </nav>
+</div>
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Blog Düzenle</h4>
+            <form class="forms-sample" asp-area="" asp-controller="Writer" asp-action="UpdateBlog" method="post">
+                <input type="hidden" asp-for="BlogId" />
+                <div class="form-group">
+                    <label asp-for="BlogTitle">Başlık</label>
+                    <input type="text" class="form-control" asp-for="BlogTitle" placeholder="Başlık">
+                </div>
+                <div class="form-group">
+                    <label asp-for="CategoryId">Kategori</label>
+                    <select class="form-control" asp-for="CategoryId" asp-items="ViewBag.Categories">
+                        <option></option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BlogContent">İçerik</label>
+                    <textarea class="form-control" asp-for="BlogContent" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BlogImageUrl">Ana Görsel</label>
+                    <input type="text" class="form-control" asp-for="BlogImageUrl" placeholder="Ana Resim">
+                </div>
+                <div class="form-group">
+                    <label asp-for="BlogThumbnailImageUrl">Thumbnail</label>
+                    <input type="text" class="form-control" asp-for="BlogThumbnailImageUrl" placeholder="Thumbnail">
+                </div>
+                <button type="submit" class="btn btn-gradient-primary mr-2">Güncelle</button>
+            </form>
+        </div>
+    </div>
+</div>
